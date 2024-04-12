@@ -1,0 +1,7 @@
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(90deg, #797dfc 0%, #797dfc 100%);
+  }
+}

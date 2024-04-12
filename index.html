@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki forum</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/internet (1).png">
+    <!--Tailwind AND DaisyUI CDN-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>     
+      <nav class="container mx-auto mt-3">
+        <div
+          class="nav-content-wrapper flex justify-between items-center px-4 lg:px-28"
+        >
+          <div class="left-side-content cursor-pointer">
+            <!-- <img src="./images/logo.png" alt="" /> -->
+            <a class="text-4xl font-bold text-purple-950" href="#">WiKi Forum</a>
+          </div>
+          <div class="right-side-content cursor-pointer flex justify-center gap-4">
+            <div class="all-buttons hidden lg:flex justify-center gap-x-3">
+              <!--1st button-->
+              <a href="#">
+                <button title="home" class="btn btn-circle btn-outline">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M2.25 12.0001L11.204 3.04507C11.644 2.60607 12.356 2.60607 12.795 3.04507L21.75 12.0001M4.5 9.75007V19.8751C4.5 20.4961 5.004 21.0001 5.625 21.0001H9.75V16.1251C9.75 15.5041 10.254 15.0001 10.875 15.0001H13.125C13.746 15.0001 14.25 15.5041 14.25 16.1251V21.0001H18.375C18.996 21.0001 19.5 20.4961 19.5 19.8751V9.75007M8.25 21.0001H16.5"
+                        stroke="#12132D"
+                        stroke-opacity="0.6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+              </a>
+              <!--2nd button-->
+              <a href="#all-post-container">
+                <button title="posts" class="btn btn-circle btn-outline">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.862 4.487L18.549 2.799C18.9007 2.44733 19.3777 2.24976 19.875 2.24976C20.3723 2.24976 20.8493 2.44733 21.201 2.799C21.5527 3.15068 21.7502 3.62766 21.7502 4.125C21.7502 4.62235 21.5527 5.09933 21.201 5.451L6.832 19.82C6.30332 20.3484 5.65137 20.7367 4.935 20.95L2.25 21.75L3.05 19.065C3.26328 18.3486 3.65163 17.6967 4.18 17.168L16.863 4.487H16.862ZM16.862 4.487L19.5 7.125"
+                        stroke="#12132D"
+                        stroke-opacity="0.6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+              </a>
+               <!--3rd button-->
+              <a href="#latest-post-container">
+                <button title="people" class="btn btn-circle btn-outline">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M18 7.5V10.5M18 10.5V13.5M18 10.5H21M18 10.5H15M12.75 6.375C12.75 7.27011 12.3944 8.12855 11.7615 8.76149C11.1285 9.39442 10.2701 9.75 9.375 9.75C8.47989 9.75 7.62145 9.39442 6.98851 8.76149C6.35558 8.12855 6 7.27011 6 6.375C6 5.47989 6.35558 4.62145 6.98851 3.98851C7.62145 3.35558 8.47989 3 9.375 3C10.2701 3 11.1285 3.35558 11.7615 3.98851C12.3944 4.62145 12.75 5.47989 12.75 6.375ZM3 19.235V19.125C3 17.4342 3.67165 15.8127 4.86719 14.6172C6.06274 13.4216 7.68424 12.75 9.375 12.75C11.0658 12.75 12.6873 13.4216 13.8828 14.6172C15.0784 15.8127 15.75 17.4342 15.75 19.125V19.234C13.8255 20.3931 11.6206 21.0038 9.374 21C7.043 21 4.862 20.355 3 19.234V19.235Z"
+                        stroke="#12132D"
+                        stroke-opacity="0.6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+              </a>
+              <!--4th button-->
+              <a href="#join-our-forum">
+                <button title="posts" class="btn btn-circle btn-outline">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M3 3V4.5M3 4.5L5.77 3.807C7.8544 3.28605 10.0564 3.52795 11.978 4.489L12.086 4.543C13.9688 5.4843 16.1219 5.73589 18.171 5.254L21.281 4.522C20.9029 8.01155 20.9046 11.5318 21.286 15.021L18.172 15.753C16.1227 16.2354 13.9692 15.9842 12.086 15.043L11.978 14.989C10.0564 14.028 7.8544 13.786 5.77 14.307L3 15M3 4.5V15M3 21V15"
+                        stroke="#12132D"
+                        stroke-opacity="0.6"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+              </a>
+             
+            </div>
+
+            <!--Sign in button-->
+            <button
+              class="rounded-[50px] px-10 py-4 bg-[#797DFC] text-white font-semibold"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!--Banner section-->
+      <div
+        class="banner container mx-auto mt-5 bg-[#12132D] w-full lg:w-[1100px] h-screen lg:h-[550px] overflow-hidden rounded-3xl"
+      >
+        <!--banner bg image-->
+        <div class="hidden relative lg:flex items-end justify-end h-full">
+          <img src="./images/bgbanner.png" alt="" />
+        </div>
+        <!--Banner left side content-->
+        <div
+          class="absolute top-[30%] flex flex-col w-full lg:w-2/6 px-20 lg:px-28 gap-y-7"
+        >
+          <div class="text-content py-8 lg:py-6">
+            <h1 class="text-4xl lg:text-5xl text-white font-semibold">
+              Welcome to the
+              <span class="bg-gradient-to-r from-purple-900 via-slate-100 to-indigo-600 inline-block text-transparent bg-clip-text font-bold">WiKi</span> Forum
+            </h1>
+            <p class="text-xl text-white">
+              Share your favorite opinion and win and wp forum coffee mug!
+            </p>
+          </div>
+          <!--Search Field-->
+          <div class="flex justify-center">
+            <label
+              class="input input-bordered rounded-full flex items-center gap-2"
+            >
+              <input
+                id="search-field"
+                type="text"
+                class="grow"
+                placeholder="Search"
+              />
+              <span class="badge badge-info"><button id="search-btn" onclick="handleSearch()">Search</button></span>
+            </label>
+          </div>
+        </div>
+        <!--Banner right side content-->
+        <div
+          class="hidden absolute top-[30%] bg-[#FFFFFF] left-[60%] lg:flex flex-col px-14 w-[330px] h-[250px] justify-evenly rounded-xl"
+        >
+          <div class="flex justify-between items-center text-black">
+            <h1>Registered Users</h1>
+            <p>05</p>
+          </div>
+          <div class="flex justify-between items-center text-black">
+            <h1>Forum</h1>
+            <p>04</p>
+          </div>
+          <div class="flex justify-between items-center text-black">
+            <h1>Topics</h1>
+            <p>03</p>
+          </div>
+          <div class="flex justify-between items-center text-black">
+            <h1>Replies</h1>
+            <p>01</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+         <!--Spinner/Loader-->
+         <div id="loading-spinner" class="text-center">
+            <span
+              class="loading loading-spinner loading-lg text-primary"
+            ></span>
+          </div>
+      <!--Let's Discuss Text-->
+      <div
+        class="container mx-auto text-center my-5 w-full px-5 lg:px-0 lg:w-3/6 mt-16"
+      >
+        <h1 class="text-4xl text-[#12132D] font-bold">Let’s Discuss</h1>
+        <p class="text-xl text-[#12132D99]">
+          Yes, you can run unit tests and view the results directly within the
+          app. The integrated testing features allow for a streamlined .
+        </p>
+      </div>
+      <!--Post card section-->
+      <section
+        class="container mx-auto mt-14 flex flex-col lg:flex-row px-2 lg:px-24 h-full gap-x-0 lg:gap-x-5"
+      >
+        <!--Left side card contents-->
+        <!--Cards-->
+        <div id="all-post-container" class="left-side-contents flex flex-col gap-y-10">
+          <!--API Display cards-->
+          <!-- <div
+            class="card lg:card-side bg-base-100 shadow-xl w-full lg:w-[750px] max-h-min lg:h-[250px]"
+          >
+            <figure class="h-16">
+              <div class="avatar online">
+                <div class="rounded-full">
+                  <img
+                    class="h-5"
+                    src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  />
+                </div>
+              </div>
+            </figure>
+            <div class="card-body px-5 lg:px-14">
+              <div class="flex justify-evenly items-center">
+                <p>#Music</p>
+                <h2>Author: <span>AWLad HOSSAIN</span></h2>
+              </div>
+              <h2 class="card-title">Ttile</h2>
+              <p>
+                It’s one thing to subject yourself to ha Halloween costume
+                mishap because, hey that’s your prerogative
+              </p>
+              <hr />
+              <div class="card-actions justify-between">
+                <div class="icons flex gap-x-10">
+                  <div class="message flex justify-center items-center gap-x-2">
+                    <img src="./images/tabler-icon-message-2.png" alt="" />
+                    <p>560</p>
+                  </div>
+                  <div class="watch flex justify-center items-center gap-x-2">
+                    <img src="./images/tabler-icon-eye.png" alt="" />
+                    <p>1,500</p>
+                  </div>
+                  <div class="date flex justify-center items-center gap-x-2">
+                    <img src="./images/tabler-icon-clock-hour-9.png" alt="" />
+                    <p>5 min</p>
+                  </div>
+                </div>
+                <div class="mark-as-read-buttons">
+                  <button id="mark-as-read-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="28"
+                      viewBox="0 0 28 28"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_57_425)">
+                        <path
+                          d="M13.9998 0C6.26805 0 9.15527e-05 6.26814 9.15527e-05 13.9999C9.15527e-05 21.7314 6.26805 28 13.9998 28C21.7315 28 27.9999 21.7314 27.9999 13.9999C27.9999 6.26814 21.7315 0 13.9998 0ZM14 4.91741L22.2847 10.0835H5.71542L14 4.91741ZM22.3879 18.333H22.3871C22.3871 19.1616 21.7155 19.8331 20.887 19.8331H7.1131C6.28447 19.8331 5.61303 19.1615 5.61303 18.333V10.4122C5.61303 10.3245 5.62199 10.2393 5.63655 10.1556L13.552 15.0914C13.5617 15.0975 13.5721 15.1016 13.5821 15.1072C13.5925 15.113 13.6032 15.1186 13.6138 15.1239C13.6697 15.1527 13.7273 15.176 13.7862 15.1912C13.7923 15.1929 13.7983 15.1936 13.8044 15.195C13.869 15.2102 13.9344 15.2197 13.9998 15.2197H14.0002C14.0007 15.2197 14.0012 15.2197 14.0012 15.2197C14.0665 15.2197 14.1319 15.2105 14.1965 15.195C14.2026 15.1935 14.2086 15.1929 14.2147 15.1912C14.2735 15.176 14.3309 15.1527 14.3871 15.1239C14.3977 15.1186 14.4084 15.113 14.4188 15.1072C14.4287 15.1016 14.4392 15.0975 14.4489 15.0914L22.3644 10.1556C22.3789 10.2393 22.3879 10.3244 22.3879 10.4122V18.333Z"
+                          fill="#10B981"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_57_425">
+                          <rect width="28" height="28" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!--Card1 Ends-->
+          
+        </div>
+        <!--Right side box content-->
+        <div
+          class="hidden lg:flex flex-col right-side-contents w-[330px] py-10 h-full rounded-xl bg-[#12132D0D] px-3"
+        >
+          <div>
+            <div class="flex justify-between px-4">
+              <h1 class="text-xl font-black">Title</h1>
+              <div class="flex justify-center items-center gap-x-2">
+                <img src="./images/Frame.png" alt="" />
+                <p>Mark as Read</p>
+                <p>(<span id="read-text">0</span>)</p>
+                
+              </div>
+            </div>
+          </div>
+          <div id="append-mark-as-read" class="collapse grid grid-rows-1 bg-white">
+            <!-- <div class="collapse-title text-xl font-medium">
+              Title text of whatever post you read
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!--Join Our Forum image -->
+      <section id="join-our-forum"
+        class="container mx-auto bg-[#12132D] px-10 lg:px-32 mt-10 w-full lg:max-w-[1170px] h-svh lg:max-h-[430px] rounded-3xl"
+      >
+        <div class="flex justify-between items-center lg:items-end wrapper h-full">
+          <div class="left flex flex-col w-full lg:w-2/6 py-2 lg:py-10 gap-y-5">
+            <div class="text-xl text-white">
+              <h1 class="text-4xl font-bold ">Join Our Forum</h1>
+              <p class="">
+                Share your favorite opinion and win and wp forum coffee mug!
+                Yes, you can run unit tests and view the results directly within
+                the app.
+              </p>
+            </div>
+            <div class="mt-4">
+                <button
+                class="rounded-[50px] px-10 py-4 bg-[#797DFC] text-white font-semibold"
+              >
+                Register NOw
+              </button>
+            </div>
+              
+            </div>
+            <div class="right hidden lg:flex  items-end">
+              <img src="./images/joinforum.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Latest post text-->
+      <div
+        class="container mx-auto text-center my-5 w-full px-5 lg:px-0 lg:w-3/6 mt-16"
+      >
+        <h1 class="text-4xl text-[#12132D] font-bold">Latest Posts</h1>
+        <p class="text-xl text-[#12132D99]">
+          Stay up to date with the latest news happening your you with us. We have a variety of sections covering news from multiple different sources.
+        </p>
+      </div>
+      <!--Latest post from API section-->
+      <section class="latest-posts container mx-auto mt-16">
+        <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 px-3 lg:px-28 gap-x-4 lg:gap-x-10 gap-y-6">
+            <!--Card1-->
+            <!-- <div class="card bg-base-100 shadow-xl">
+                <figure class="px-0 lg:px-10 pt-3">
+                  <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="flex justify-start px-2 lg:px-16">
+                    <div>
+                        <img src="./images/date.png" alt="date-image">
+                    </div>
+                    <p>07 January 2023</p>
+                </div>
+                <div class="card-body items-center text-left">
+                  <h2 class="card-title">Shoes!</h2>
+                  <p>If a dog chews shoes whose shoes does he choose?Adding some more texts here..</p>
+                  <div class="card-actions">
+                    <div class="avatar">
+                            <div class="w-12 rounded-full">
+                              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h2>Author Name</h2>
+                        <p>Author Post</p>
+                    </div>
+                  </div>
+                </div>
+            </div> -->      
+        </div>
+       
+      </section>
+    </main>
+    <footer class="footer footer-center mt-20 p-10 bg-slate-300 text-black">
+            <aside>
+              <!-- <img src="./images/logo.png" alt=""> -->
+              <span class="text-purple-950 text-4xl font-bold">WiKi</span>
+              <p class="font-bold text-xl lg:text-2xl">
+                
+                How Forums <br>Providing reliable updated news since 1992
+              </p> 
+              <p class="text-lg lg:text-xl">Hope you had a nice experience of reading the latest news with us. Stay safe and have a nice day! </p>
+            </aside> 
+            <nav>
+              <div class="grid grid-flow-col gap-4">
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+              </div>
+              <hr>
+              <div>
+                <p>2024, All rights reserved.</p>
+              </div>
+            </nav>
+    </footer>
+    <script src="./javascript/wikiFunc.js"></script>
+  </body>
+</html>
